@@ -37,7 +37,24 @@ fi
 # Setup permissions
 $ESUDO chmod +xwr "$GAMEDIR/$GMLOADER"
 
-# Exports - include both local and system library paths
+# Create symlinks for system libraries if they don't exist
+if [ ! -f "$GAMEDIR/$LIBDIR/libm.so" ]; then
+    $ESUDO ln -sf "$SYSLIB/libm.so" "$GAMEDIR/$LIBDIR/libm.so"
+fi
+if [ ! -f "$GAMEDIR/$LIBDIR/libc.so" ]; then
+    $ESUDO ln -sf "$SYSLIB/libc.so" "$GAMEDIR/$LIBDIR/libc.so"
+fi
+if [ ! -f "$GAMEDIR/$LIBDIR/libdl.so" ]; then
+    $ESUDO ln -sf "$SYSLIB/libdl.so" "$GAMEDIR/$LIBDIR/libdl.so"
+fi
+if [ ! -f "$GAMEDIR/$LIBDIR/libpthread.so" ]; then
+    $ESUDO ln -sf "$SYSLIB/libpthread.so" "$GAMEDIR/$LIBDIR/libpthread.so"
+fi
+if [ ! -f "$GAMEDIR/$LIBDIR/liblog.so" ] && [ -f "$SYSLIB/liblog.so" ]; then
+    $ESUDO ln -sf "$SYSLIB/liblog.so" "$GAMEDIR/$LIBDIR/liblog.so"
+fi
+
+# Exports
 export LD_LIBRARY_PATH="$GAMEDIR/$LIBDIR:$SYSLIB:$LD_LIBRARY_PATH"
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 
