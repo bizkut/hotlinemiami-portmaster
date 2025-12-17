@@ -37,21 +37,15 @@ fi
 # Setup permissions
 $ESUDO chmod +xwr "$GAMEDIR/$GMLOADER"
 
-# Create symlinks for system libraries if they don't exist
+# Remove any bad symlinks and only create libm.so symlink
+$ESUDO rm -f "$GAMEDIR/$LIBDIR/libc.so" 2>/dev/null
+$ESUDO rm -f "$GAMEDIR/$LIBDIR/libdl.so" 2>/dev/null
+$ESUDO rm -f "$GAMEDIR/$LIBDIR/libpthread.so" 2>/dev/null
+$ESUDO rm -f "$GAMEDIR/$LIBDIR/liblog.so" 2>/dev/null
+
+# Only symlink libm.so if needed
 if [ ! -f "$GAMEDIR/$LIBDIR/libm.so" ]; then
     $ESUDO ln -sf "$SYSLIB/libm.so" "$GAMEDIR/$LIBDIR/libm.so"
-fi
-if [ ! -f "$GAMEDIR/$LIBDIR/libc.so" ]; then
-    $ESUDO ln -sf "$SYSLIB/libc.so" "$GAMEDIR/$LIBDIR/libc.so"
-fi
-if [ ! -f "$GAMEDIR/$LIBDIR/libdl.so" ]; then
-    $ESUDO ln -sf "$SYSLIB/libdl.so" "$GAMEDIR/$LIBDIR/libdl.so"
-fi
-if [ ! -f "$GAMEDIR/$LIBDIR/libpthread.so" ]; then
-    $ESUDO ln -sf "$SYSLIB/libpthread.so" "$GAMEDIR/$LIBDIR/libpthread.so"
-fi
-if [ ! -f "$GAMEDIR/$LIBDIR/liblog.so" ] && [ -f "$SYSLIB/liblog.so" ]; then
-    $ESUDO ln -sf "$SYSLIB/liblog.so" "$GAMEDIR/$LIBDIR/liblog.so"
 fi
 
 # Exports
