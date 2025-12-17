@@ -18,10 +18,8 @@
     ],
     "image": {},
     "rtr": false,
-    "runtime": "gmloader-next",
-    "reqs": [
-      "Hotline Miami Android APK"
-    ],
+    "runtime": null,
+    "reqs": [],
     "arch": [
       "aarch64",
       "armhf"
