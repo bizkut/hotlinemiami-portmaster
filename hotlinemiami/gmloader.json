@@ -3,6 +3,7 @@
     "apk_path": "game.port",
     "show_cursor": false,
     "disable_controller": false,
-    "disable_depth": false,
-    "force_platform": "os_linux"
+    "disable_depth": true,
+    "disable_extensions": true,
+    "force_platform": "os_android"
 }
