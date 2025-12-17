@@ -26,14 +26,17 @@ cd $GAMEDIR
 # Determine architecture and set gmloader binary
 if [ "$DEVICE_ARCH" == "aarch64" ]; then
     GMLOADER="gmloadernext.aarch64"
+    LIBDIR="lib/arm64-v8a"
 else
     GMLOADER="gmloadernext.armhf"
+    LIBDIR="lib/armeabi-v7a"
 fi
 
 # Setup permissions
 $ESUDO chmod +xwr "$GAMEDIR/$GMLOADER"
 
 # Exports
+export LD_LIBRARY_PATH="$GAMEDIR/$LIBDIR:$LD_LIBRARY_PATH"
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 
 # Display loading splash
