@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "hotlinemiami.zip",
+  "items": [
+    "Hotline Miami.sh",
+    "hotlinemiami"
+  ],
+  "items_opt": null,
+  "attr": {
+    "title": "Hotline Miami",
+    "desc": "A high-octane action game overflowing with raw brutality, hard-boiled gunplay and skull crushing close combat.",
+    "inst": "Copy your Hotline Miami Android APK to hotlinemiami/ folder and rename it to game.port",
+    "genres": [
+      "action"
+    ],
+    "porter": [
+      "bizkut"
+    ],
+    "image": {},
+    "rtr": false,
+    "runtime": "gmloader-next",
+    "reqs": [
+      "Hotline Miami Android APK"
+    ],
+    "arch": [
+      "aarch64"
+    ]
+  }
+}

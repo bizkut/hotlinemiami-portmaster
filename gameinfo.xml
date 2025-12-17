@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+  <game>
+    <path>./Hotline Miami.sh</path>
+    <name>Hotline Miami</name>
+    <desc>A high-octane action game overflowing with raw brutality, hard-boiled gunplay and skull crushing close combat. Set in an alternative 1989 Miami, you play as a hitman receiving cryptic messages on your answering machine.</desc>
+    <releasedate>20121023T000000</releasedate>
+    <developer>Dennaton Games</developer>
+    <publisher>Devolver Digital</publisher>
+    <genre>Action</genre>
+    <image>./hotlinemiami/cover.png</image>
+  </game>
+</gameList>

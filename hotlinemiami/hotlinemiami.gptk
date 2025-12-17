@@ -1,0 +1,38 @@
+# Hotline Miami controller mapping for gptokeyb
+# WASD movement, Mouse for aiming, LMB attack, RMB pickup
+
+# Deadzone
+deadzone = 2000
+
+# D-pad movement
+up = w
+down = s
+left = a
+right = d
+
+# Left analog movement
+left_analog_up = w
+left_analog_down = s
+left_analog_left = a
+left_analog_right = d
+
+# Right analog for mouse aiming
+right_analog_as_mouse = true
+mouse_scale = 6
+
+# Action buttons
+a = mouse_left
+b = mouse_right
+x = space
+y = r
+
+# Triggers
+l1 = shift
+r1 = mouse_left
+l2 = q
+r2 = e
+
+# Start/Select
+start = escape
+select = tab
+back = escape

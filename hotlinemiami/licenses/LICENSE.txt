@@ -1,0 +1,24 @@
+GMLoader-Next License
+=====================
+
+Copyright (c) 2021-2025 JohnnyonFlame
+Licensed under GNU General Public License v2.0
+
+Source: https://github.com/JohnnyonFlame/gmloader-next
+
+---
+
+Hotline Miami
+=============
+
+Developed by Dennaton Games
+Published by Devolver Digital
+Game files must be legally obtained by the user.
+
+---
+
+Port Template
+=============
+
+Based on template by Doronimmo
+https://github.com/Doronimmo/GameMakerPorts
