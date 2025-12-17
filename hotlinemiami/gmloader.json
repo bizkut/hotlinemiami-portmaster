@@ -1,12 +1,8 @@
 {
-    "save_dir": "saves",
+    "save_dir": "save",
     "apk_path": "game.port",
     "show_cursor": false,
     "disable_controller": false,
-    "disable_depth": true,
-    "disable_extensions": false,
-    "disable_rumble": false,
-    "disable_texhack": false,
-    "rumble_scale": 4.0,
-    "force_platform": "os_android"
+    "disable_depth": false,
+    "force_platform": "os_linux"
 }
