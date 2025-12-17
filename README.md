@@ -6,10 +6,24 @@ This port requires game files from the **Android version** of Hotline Miami.
 
 ## Installation
 
-1. Download this port
+1. Download this port to your device's `ports/` folder
 2. Obtain your Hotline Miami Android APK
-3. Rename the APK to `game.port`
-4. Place `game.port` in the `hotlinemiami/` folder
+3. Extract the APK using 7-Zip or similar tool
+4. Copy files to the port:
+
+### Option A: Use the APK directly
+- Rename your APK to `game.port`
+- Place it in the `hotlinemiami/` folder
+
+### Option B: Use extracted assets
+Copy from the APK's `assets/` folder to `hotlinemiami/assets/`:
+- `game.droid` (required - main game data)
+- `*.ogg` files (required - all audio/music files):
+  - `hydrogen.ogg`, `hotline.ogg`, `crystals.ogg`, etc.
+
+Copy from the APK's `lib/arm64-v8a/` folder to `hotlinemiami/lib/arm64-v8a/`:
+- `libyoyo.so` (required - game runtime)
+
 5. Launch via Portmaster
 
 ## Controls
