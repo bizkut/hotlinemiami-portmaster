@@ -23,8 +23,15 @@ GAMEDIR="/$directory/ports/hotlinemiami"
 cd $GAMEDIR
 > "$GAMEDIR/log.txt" && exec > >(tee "$GAMEDIR/log.txt") 2>&1
 
+# Determine architecture and set gmloader binary
+if [ "$DEVICE_ARCH" == "aarch64" ]; then
+    GMLOADER="gmloadernext.aarch64"
+else
+    GMLOADER="gmloadernext.armhf"
+fi
+
 # Setup permissions
-$ESUDO chmod +xwr "$GAMEDIR/gmloadernext.aarch64"
+$ESUDO chmod +xwr "$GAMEDIR/$GMLOADER"
 $ESUDO chmod +xr "$GAMEDIR/tools/splash"
 $ESUDO chmod +xr "$GAMEDIR/tools/patchscript"
 
@@ -53,9 +60,9 @@ if [ -f "$GAMEDIR/patchlog.txt" ]; then
 fi
 
 # Assign gptokeyb and load the game
-$GPTOKEYB "gmloadernext.aarch64" -c "hotlinemiami.gptk" &
-pm_platform_helper "$GAMEDIR/gmloadernext.aarch64" >/dev/null
-./gmloadernext.aarch64 -c gmloader.json
+$GPTOKEYB "$GMLOADER" -c "hotlinemiami.gptk" &
+pm_platform_helper "$GAMEDIR/$GMLOADER" >/dev/null
+./$GMLOADER -c gmloader.json
 
 # Cleanup
 pm_finish

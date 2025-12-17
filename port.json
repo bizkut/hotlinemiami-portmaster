@@ -23,7 +23,8 @@
       "Hotline Miami Android APK"
     ],
     "arch": [
-      "aarch64"
+      "aarch64",
+      "armhf"
     ]
   }
 }
